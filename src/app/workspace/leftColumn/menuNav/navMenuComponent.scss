@@ -1,0 +1,72 @@
+.container_main-component
+{
+    position: relative;
+    width: 250px;
+    height: 132px;
+    left: 0;
+    top: 2px;
+
+    overflow-y: overlay;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &::-webkit-scrollbar 
+    {
+        width: 10px;      
+        background: none; 
+    }
+    &::-webkit-scrollbar-track 
+    {
+        background: none; 
+    }
+    &::-webkit-scrollbar-thumb 
+    {
+        background-clip: padding-box;
+        background-color: #2b2b2b7d; 
+        border: 0.01vw solid #fff;
+        border-radius: 2vw;
+    }  
+    &::-webkit-scrollbar-corner 
+    {
+        background-color: none;
+    }
+    p{
+        padding: 0;
+        margin: 0;
+        padding: 5px 0 0 20px;
+        height: 27px;
+        color: #ffffffc9;
+        font-size: 14px;
+        font-weight: 300;
+        transition: 0.3s;
+        border-bottom: 0.1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        justify-items: center;
+        &:hover
+        {
+            background: #1a1a1a;
+            color: #4AFF93;
+            cursor: url(../../../assets/imegs/pointer.png), auto;
+            padding: 5px 0 0 40px;
+        }  
+    }
+    .active_nav-menu
+    {
+        background: #1a1a1a;
+        color: #4AFF93;
+        cursor: url(../../../assets/imegs/pointer.png), auto;
+        padding: 5px 0 0 40px;
+    }
+}
+
+.info-com-left::after
+{
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 0.1px;
+    background: rgba(255, 255, 255, 0.5);
+    top: 311px;
+}
+

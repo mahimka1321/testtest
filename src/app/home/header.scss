@@ -1,0 +1,75 @@
+.container_header
+        {
+          display: flex;
+          min-width: 280px;
+          max-width: 1220px;
+          width: 100%;
+          height: 60px;
+          justify-content: space-between;
+          margin: 0 auto;
+          padding-top: 40px;
+          .logo
+          {
+            display: flex;
+            h2
+            {
+              a 
+              {
+                text-decoration: none;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                display: flex;
+                color: #fff;
+                margin-top: -3px;
+                cursor: url(../assets/imegs/pointer.png), auto;
+              }
+            }
+          }
+          .container_nav
+          {
+            margin-right: 150px;
+            .nav
+            {
+              display: flex;
+              list-style: none;
+              position: relative;
+              z-index: 10;
+              li //:not(:first-child)
+              {
+                margin-left: 20px;
+                a 
+                {
+                  color: #fff;
+                  font-family: 'Roboto', sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 16px;
+                  line-height: 23px;
+                  text-decoration: none;
+                  cursor: url(../assets/imegs/pointer.png), auto;
+                  &:hover
+                  {
+                    border-bottom: 1px solid #4AFF93;
+                    transition: 0.5s;
+                  }
+                  &:hover span
+                  {
+                    color: #fff;
+                    transition: 0.7s;
+                  }
+                }
+              }
+            }
+          }
+          .iso_reg
+          {
+            margin-top: 13px;
+            margin-right: 90px;
+            svg 
+            {
+              cursor: url(../assets/imegs/pointer.png), auto;
+            }
+          }
+        }

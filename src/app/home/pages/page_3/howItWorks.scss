@@ -1,0 +1,127 @@
+.works_disableZoom 
+{ 
+    .app_works
+    {
+        display: block;
+        min-width: 320px;
+        max-width: 1350px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        height: 1379px;
+        background: url(../../../assets/imegs/bgg-works.png) no-repeat center center;
+        margin-top: 90px;
+        .container_title
+        {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 1100px;
+            height: 390px;
+            margin: 0 auto;
+            justify-content: center;
+            margin-top: 50px;
+            h1 
+            {
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 128px;
+                line-height: 150px;
+                color: #fff;
+                text-shadow: 0px 0px 35px #000000;
+                margin-left: 9px;
+            }
+            p
+            {
+                font-family: 'Roboto', sans-serif;
+                width: 640px;
+                margin-left: 230px;
+                margin-top: -107px;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 20px;
+                line-height: 23px;
+                color: #fff;
+                span
+                {
+                    margin-left: 500px;
+                }
+            }
+        }
+        .container__txet_1
+        {
+            display: flex;
+            width: 610px;
+            height: 120px;
+            margin: 0 auto;
+            justify-items: center;
+            margin-top: 110px;
+            h3
+            {
+                color: #fff;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 23px;
+            }
+            p
+            {
+                color: #fff;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 20px;
+                line-height: 23px;
+            }
+        }
+        .container__txet_2
+        {
+            display: flex;
+            width: 610px;
+            height: 120px;
+            margin: 0 auto;
+            justify-items: center;
+            margin-top: 190px;
+            h3
+            {
+                color: #fff;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 23px;
+            }
+            p
+            {
+                color: #fff;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 20px;
+                line-height: 23px;
+            }
+        }
+        img {
+            display: flex;
+            justify-items: center;
+            width: 236px;
+            height: 233px;
+        }
+        .photo__num_1
+        {
+            position: absolute;
+            left: 0;
+            margin-left: 4%;
+            top: 57%;
+        }
+        .photo__num_2
+        {
+            position: absolute;
+            right: 0;
+            margin-right: 4%;
+            top: 57%;
+        }
+    }
+}

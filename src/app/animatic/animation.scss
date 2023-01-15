@@ -1,0 +1,128 @@
+
+@keyframes imgActive {
+  0%{
+    opacity: 0;
+  }100%{
+    opacity: 1;
+  }
+}
+
+@keyframes Redactiractive {
+  0%{
+    opacity: 0;
+  }100%{
+    opacity: 1;
+  }
+}
+
+@keyframes btnSwap {
+  0%
+  {
+    width: 125px;
+  }100%{
+    width: 100%;
+  }
+}
+
+@keyframes identifier {
+  0%{
+      opacity: 0;
+  }27%{
+      opacity: 0;
+  }100% {
+      opacity: 1;
+  }
+}
+
+@keyframes add {
+  0%{
+      opacity: 0;
+      width: 0;
+      opacity: 0;
+  }10%{
+      opacity: 0;
+      width: 0;
+      opacity: 0;
+  }100%{
+      opacity: 1;
+      width: 250px;
+  }
+  }
+
+
+.animatic_nav-1{
+  &:hover{
+    &::after{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 2px;
+      left: 56px;
+      top: 40px;
+      background: #4AFF93;
+      
+      animation: Arrp1  0.3s linear;
+      animation-fill-mode: forwards;
+    }
+    @keyframes Arrp1 {
+      0%{
+          width: 10px;
+      }
+      100%{
+          width: 77px;
+      }
+    }  
+  }
+}
+
+
+.animatic_nav-2{
+  &:hover{
+    &::after{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 2px;
+      left: 155px;
+      top: 40px;
+      background: #4AFF93;
+      
+      animation: Arrp2  0.3s linear;
+      animation-fill-mode: forwards;
+    }
+    @keyframes Arrp2 {
+      0%{
+          width: 10px;
+      }
+      100%{
+          width: 65px;
+      }
+    }  
+  }
+}
+
+
+.animatic_nav-3{
+  &:hover{
+    &::after{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 2px;
+      left: 242px;
+      top: 40px;
+      background: #4AFF93;
+      
+      animation: Arrp3  0.3s linear;
+      animation-fill-mode: forwards;
+    }
+    @keyframes Arrp3 {
+      0%{
+          width: 10px;
+      }
+      100%{
+          width: 140px;
+      }
+    }  
+  }
+}
