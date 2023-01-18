@@ -58,17 +58,17 @@ function Canvas({
 
     let i = 0
 
-    if(i != 0){
+    if(i !== 0){
         toos =  papa
     }
 
 
-    const [toch, _setToch] = React.useState(<Toch />)
+    const toch = <Toch />
     let controlToch
 
 
 
-    if(numControlToch != 0)
+    if(numControlToch !== 0)
     {
         controlToch = toch
     }

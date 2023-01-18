@@ -1,5 +1,5 @@
 
-import React, {useEffect, useState , useRef} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
 import regPhoto from './app/assets/imegs/reg.png';
 
@@ -41,7 +41,7 @@ function Reg() {
 
     const emailHandler = (e) => {
         setEmail(e.target.value)
-        const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        const re =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(!re.test(String(e.target.value).toLowerCase())) {
             setEmailError('Emil не коректен')
         } else {
@@ -64,16 +64,18 @@ function Reg() {
     }
 
     const blurHandler = (e) => {
-        switch(e.target.name) {
+        switch (e.target.name) {
             case 'login' :
-                setLoginDirty(true)
-                break
+                setLoginDirty(true);
+                break;
             case 'email' :
-                setEmailDirty(true)
-                break
+                setEmailDirty(true);
+                break;
             case 'psw' :
-                setPasswordDirty(true)
-                break
+                setPasswordDirty(true);
+                break;
+            default: 
+                break;
         }
     }
 
@@ -96,14 +98,14 @@ function Reg() {
                 
             })
         }
-    },[loginError, emailError, passwordError])
+    },[loginError, emailError, passwordError, timer])
 
     function controlTimer()
     {
       let biba = document.getElementById("biba");
       biba.classList.add("none__reg_full");
     }
-    if(timer != 0){
+    if(timer !== 0){
         setTimeout(controlTimer, 600);
     }
 
@@ -197,7 +199,7 @@ function Reg() {
             <div>
                 <div  className="opasiti_img" id="biba2"></div>
                 <button className="btn__op_st-w"><Link to="/">Перейти на главное меню</Link></button>
-                <img className="img_reg" src={regPhoto} />
+                <img className="img_reg" src={regPhoto} alt=""/>
             </div>
         </div>
     )

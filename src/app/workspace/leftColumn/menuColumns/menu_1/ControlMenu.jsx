@@ -101,11 +101,11 @@ const inputCP = useRef(); const editItemCP = () => {inputCP.current.select();};
     let acceptsPosition1 = "";
     let acceptsPosition2 = "";
 
-    if(visibleInvisibleBgArrow == 0){
+    if(visibleInvisibleBgArrow === 0){
         acceptsPosition1 = visibleArrow;
         acceptsPosition2 = invisibleArrow;
     };
-    if(visibleInvisibleBgArrow == 1){
+    if(visibleInvisibleBgArrow === 1){
         acceptsPosition2 = visibleArrow;
         acceptsPosition1 = invisibleArrow;
     };

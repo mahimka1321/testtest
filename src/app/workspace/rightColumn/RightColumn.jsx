@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect} from 'react';
 
 function RightColumn(props, handleInput4, state4) {
     // let txtSettings = document.getElementById('txtSettings')

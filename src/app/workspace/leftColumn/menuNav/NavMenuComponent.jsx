@@ -62,6 +62,8 @@ const stylesPSpanSR = {
     fontWeight: '600',
     fontSize:'24px',
     marginTop :'-8px',
+    position: 'absolute',
+    right: '50px'
 };
 const stylesMSpanSR = {
 
@@ -69,6 +71,8 @@ const stylesMSpanSR = {
     fontWeight: '600',
     fontSize:'24px',
     marginTop :'-8px',
+    position: 'absolute',
+    right: '20px'
 };
 
 

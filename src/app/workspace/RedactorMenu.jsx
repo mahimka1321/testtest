@@ -7,7 +7,6 @@ import PopupCode from "./PopupCode"
 import Canvas from "./canvas/Canvas"
 import Hoocks from "./hoocks/SliderHock"
 
-import Hint from "./Hint"
 import "./rightColumn/rightColumn.scss"
 import "./menuHeader/topMenu.scss"
 import "./canvas/canvas.scss"

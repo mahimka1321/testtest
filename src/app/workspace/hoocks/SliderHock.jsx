@@ -713,22 +713,65 @@ const removeSR = () => {
 
 
 let htmlCanvasImgSlider = ``
+let sccCanvasImgSlider = ``
+let jsCanvasImgSlider = ``
 if (sumControlCanvasImgSlider !== 1 ) {
     let controlHtmlCanvasImgSlider = ``;
     htmlCanvasImgSlider = controlHtmlCanvasImgSlider
+    let controlCssCanvasImgSlider = ``;
+    sccCanvasImgSlider = controlCssCanvasImgSlider
+    let controlJsCanvasImgSlider = ``;
+    jsCanvasImgSlider =  controlJsCanvasImgSlider;
 }
 
 if (sumControlCanvasImgSlider !== 0 ) {
     let controlHtmlCanvasImgSlider = `<!-- контейнер фото -->
     <img class="photos" id="photos" src="https://phonoteka.org/uploads/posts/2021-06/1624303226_38-phonoteka_org-p-oboi-dlya-makbuka-krasivo-42.jpg"/>`;
     htmlCanvasImgSlider = controlHtmlCanvasImgSlider
+    let controlCssCanvasImgSlider = `.photos{
+    position: absolute;
+    top: ${position2.y}px; 
+    left: ${position2.x}px; 
+    transform: rotate(${MeaningRnumber2}deg);
+    border-radius: ${MeaningBRnumber2}px;
+    width: ${MeaningWnumber2}px;
+    height: ${MeaningHnumber2}px;
+    border: ${MeaningPXnumber2}px solid ${MeaningSnumber2};
+    z-index: 1;
+}`;
+    sccCanvasImgSlider = controlCssCanvasImgSlider;
+    let controlJsCanvasImgSlider = `let slider_cfg = {
+    1: "https://phonoteka.org/uploads/posts/2021-06/1624303226_38-phonoteka_org-p-oboi-dlya-makbuka-krasivo-42.jpg",
+    2: "https://mobimg.b-cdn.net/v3/fetch/9e/9ef75ed161ec520413d664a40dc450af.jpeg",
+    3: "https://vsegda-pomnim.com/uploads/posts/2022-03/1648674100_11-vsegda-pomnim-com-p-krasivie-gornie-reki-foto-11.jpg",
+    4: "https://phonoteka.org/uploads/posts/2021-06/1624079183_11-phonoteka_org-p-oboi-na-rabochii-stol-gori-krasivo-11.jpg",
+    5: "https://img1.fonwall.ru/o/n2/more-otdyh-bungalo-tropiki.jpg?route=mid&amp;h=750",
+    6: "https://catherineasquithgallery.com/uploads/posts/2021-03/1614612176_27-p-fon-dlya-fotoshopa-priroda-39.jpg",
+}
+
+let sin = 1;
+
+let size = Object.keys(slider_cfg).length;
+let path = slider_cfg[sin];
+
+function update(){
+    path = slider_cfg[sin];
+    photos.setAttribute("src", path);
+}`;
+    jsCanvasImgSlider =  controlJsCanvasImgSlider;
 }
 
 
 let htmlSwapLeft = ``
+let cssSwapLeft = ``
+let jsSwapLeft = ``
 if (sumControlSwapLeft !== 1 ) {
     let controlHtmlSwapLeft = ``;
-    htmlSwapLeft = controlHtmlSwapLeft
+    htmlSwapLeft = controlHtmlSwapLeft;
+    let controlCssSwapLeft = ``;
+    cssSwapLeft = controlCssSwapLeft;
+    let controlJsSwapLeft = ``;
+    jsSwapLeft = controlJsSwapLeft;
 }
 
 if (sumControlSwapLeft !== 0 ) {
@@ -738,14 +781,57 @@ if (sumControlSwapLeft !== 0 ) {
             ${btnNeEPsevdo1}
         </div>
     </div>`;
-    htmlSwapLeft = controlHtmlSwapLeft
+    htmlSwapLeft = controlHtmlSwapLeft;
+    let controlCssSwapLeft = `.box1 {
+    position: absolute;
+    top: ${position1.y}px; 
+    left: ${position1.x}px; 
+    transform: rotate(${MeaningRnumber1}deg);
+    border-radius: ${MeaningBRnumber1}px;
+    width: ${MeaningWnumber1}px;
+    height: ${MeaningHnumber1}px;
+    background: ${state1}; 
+    border: ${MeaningPXnumber1}px solid ${MeaningSnumber1};
+    cursor: pointer;
+    z-index: 10;
+}
+
+.box1 > .strelka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.svg > .svg-color {
+    fill: ${state4}
+}
+
+.strelka > .svg {
+    width: ${SvgControl}px;
+    height: auto;
+}`;
+    cssSwapLeft = controlCssSwapLeft;
+    let controlJsSwapLeft = `bntR.onclick = function(){
+    if (sin < size){ sin = sin + 1 } 
+    else{ sin = size; bntR.style.opacity = 0.6 }
+    if(sin > 1){ bntL.style.opacity = 1 }
+    update();
+}`;
+    jsSwapLeft = controlJsSwapLeft;
 }
 
 
 let htmlSwapRight = ``
+let cssSwapRight = ``
+let jsSwapRight = ``
 if (sumControlSwapRight !== 1 ) {
     let controlHtmlSwapRight = ``;
-    htmlSwapRight = controlHtmlSwapRight
+    htmlSwapRight = controlHtmlSwapRight;
+    let controlCssSwapRight = ``;
+    cssSwapRight = controlCssSwapRight;
+    let controlJsSwapRight = ``;
+    jsSwapRight =  controlJsSwapRight;
 }
 
 if (sumControlSwapRight !== 0 ) {
@@ -755,12 +841,51 @@ if (sumControlSwapRight !== 0 ) {
             ${btnNeEPsevdo1}
         </div>
     </div>`;
-    htmlSwapRight = controlHtmlSwapRight
+    htmlSwapRight = controlHtmlSwapRight;
+    let controlCssSwapRight = `.box {
+    position: absolute;
+    top: ${position.y}px; 
+    left: ${position.x}px; 
+    transform: rotate(${MeaningRnumber}deg);
+    border-radius: ${MeaningBRnumber}px;
+    width: ${MeaningWnumber}px;
+    height: ${MeaningHnumber}px;
+    background: ${state}; 
+    border: ${MeaningPXnumber}px solid ${MeaningSnumber};
+    cursor: pointer;
+    z-index: 10;
+}
+
+.box > .strelka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform: rotate(180deg);
+}
+
+.svg > .svg-color {
+    fill: ${state4}
+}
+
+.strelka > .svg {
+    width: ${SvgControl}px;
+    height: auto;
+}`;
+    cssSwapRight = controlCssSwapRight;
+    let controlJsSwapRight = `bntL.onclick = function(){
+    if (sin > 1){ sin = sin - 1 } 
+    else{ sin = 1 }
+    if(sin < 6){ bntR.style.opacity = 1 }
+    if(sin < 2){ bntL.style.opacity = 0.6 }
+    update();
+}`;
+    jsSwapRight =  controlJsSwapRight;
 }
 
 // Вывод html разметки  ////////
-let htmlContainer =
-        `<!-- главный контейнер -->
+let htmlContainer =`
+<!-- главный контейнер -->
 <div class="сontainer">
     ${htmlSwapRight}
     ${htmlCanvasImgSlider}
@@ -769,8 +894,8 @@ let htmlContainer =
 
 
 // Вывод css разметки /////////////////////////// 
-let cssSlider =
-        `.сontainer {
+let cssSlider =`
+.сontainer {
     position: absolute;
     top: 50%; /* изменять расположение тут */
     left: 50%;
@@ -785,115 +910,23 @@ let cssSlider =
     user-select: none;
 }
 
-.photos
-{
-    position: absolute;
-    top: ${position2.y}px; 
-    left: ${position2.x}px; 
-    transform: rotate(${MeaningRnumber2}deg);
-    border-radius: ${MeaningBRnumber2}px;
-    width: ${MeaningWnumber2}px;
-    height: ${MeaningHnumber2}px;
-    border: ${MeaningPXnumber2}px solid ${MeaningSnumber2};
-    z-index: 1;
-}
+${sccCanvasImgSlider}
+${cssSwapRight}
+${cssSwapLeft}
 
-.box {
-    position: absolute;
-    top: ${position.y}px; 
-    left: ${position.x}px; 
-    transform: rotate(${MeaningRnumber}deg);
-    border-radius: ${MeaningBRnumber}px;
-    width: ${MeaningWnumber}px;
-    height: ${MeaningHnumber}px;
-    background: ${state}; 
-    border: ${MeaningPXnumber}px solid ${MeaningSnumber};
-    cursor: pointer;
-    z-index: 10;
-}
-.box1 {
-    position: absolute;
-    top: ${position1.y}px; 
-    left: ${position1.x}px; 
-    transform: rotate(${MeaningRnumber1}deg);
-    border-radius: ${MeaningBRnumber1}px;
-    width: ${MeaningWnumber1}px;
-    height: ${MeaningHnumber1}px;
-    background: ${state1}; 
-    border: ${MeaningPXnumber1}px solid ${MeaningSnumber1};
-    cursor: pointer;
-    z-index: 10;
-}
-
-.btn-n:active {
-    transform: scale(0.9);
-    transition: 0.2s;
-}
-
-.box > .strelka {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    transform: rotate(180deg);
-}
-
-.box1 > .strelka {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-.svg-color {
-    fill: ${state4}
-}
-.svg {
-    width: ${SvgControl}px;
-    height: auto;
-}`;
+`;
 
 
 // Вывод js разметки //////////////
-let jsContainer = 
-        `let slider_cfg = {
-    1: "https://phonoteka.org/uploads/posts/2021-06/1624303226_38-phonoteka_org-p-oboi-dlya-makbuka-krasivo-42.jpg",
-    2: "https://mobimg.b-cdn.net/v3/fetch/9e/9ef75ed161ec520413d664a40dc450af.jpeg",
-    3: "https://vsegda-pomnim.com/uploads/posts/2022-03/1648674100_11-vsegda-pomnim-com-p-krasivie-gornie-reki-foto-11.jpg",
-    4: "https://phonoteka.org/uploads/posts/2021-06/1624079183_11-phonoteka_org-p-oboi-na-rabochii-stol-gori-krasivo-11.jpg",
-    5: "https://img1.fonwall.ru/o/n2/more-otdyh-bungalo-tropiki.jpg?route=mid&amp;h=750",
-    6: "https://catherineasquithgallery.com/uploads/posts/2021-03/1614612176_27-p-fon-dlya-fotoshopa-priroda-39.jpg",
-}
-
+let jsContainer = `
 let photos = document.getElementById('photos');
 let bntL = document.getElementById('bntL');
 let bntR = document.getElementById('bntR');
 
-let sin = 1;
+${jsCanvasImgSlider}
+${jsSwapRight}
+${jsSwapLeft}
 
-let size = Object.keys(slider_cfg).length;
-let path = slider_cfg[sin];
-
-function update(){
-    path = slider_cfg[sin];
-    photos.setAttribute("src", path);
-}
-
-bntL.onclick = function(){
-    if (sin > 1){ sin = sin - 1 } 
-    else{ sin = 1 }
-    if(sin < 6){ bntR.style.opacity = 1 }
-    if(sin < 2){ bntL.style.opacity = 0.6 }
-    update();
-}
-
-bntR.onclick = function(){
-    if (sin < size){ sin = sin + 1 } 
-    else{ sin = size; bntR.style.opacity = 0.6 }
-    if(sin > 1){ bntL.style.opacity = 1 }
-    update();
-}
-
-update();
 `;
     return {
         htmlContainer, cssSlider, jsContainer, position, handleChange, editItemX, styles, inputX, editItemY, inputY, 
