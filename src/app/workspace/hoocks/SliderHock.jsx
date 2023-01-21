@@ -672,8 +672,6 @@ useEffect(() => {
 
 let [numControlToch, setNumControlToch] = useState(0)
 
-
-
 let storageImgSlider = JSON.parse(localStorage.getItem("sumControlCanvasImgSlider"));
 let [sumControlCanvasImgSlider, setSumControlCanvasImgSlider] = useState(storageImgSlider)
 localStorage.setItem("sumControlCanvasImgSlider", JSON.stringify(sumControlCanvasImgSlider));
@@ -711,6 +709,8 @@ const removeSR = () => {
     setSumControlSwapRight(sumControlSwapRight = 0 )  
 }
 
+////////// sumControlCanvasImgSlider ////////////
+/////////////////////////////////////////////////
 
 let htmlCanvasImgSlider = ``
 let sccCanvasImgSlider = ``
@@ -761,6 +761,8 @@ function update(){
     jsCanvasImgSlider =  controlJsCanvasImgSlider;
 }
 
+ /////////////// sumControlSwapLeft //////////////
+ /////////////////////////////////////////////////
 
 let htmlSwapLeft = ``
 let cssSwapLeft = ``
@@ -821,6 +823,8 @@ if (sumControlSwapLeft !== 0 ) {
     jsSwapLeft = controlJsSwapLeft;
 }
 
+//////////// sumControlSwapRight ///////////
+/////////////////////////////////////////////
 
 let htmlSwapRight = ``
 let cssSwapRight = ``
@@ -883,6 +887,9 @@ if (sumControlSwapRight !== 0 ) {
     jsSwapRight =  controlJsSwapRight;
 }
 
+
+
+
 // Вывод html разметки  ////////
 let htmlContainer =`
 <!-- главный контейнер -->
@@ -891,7 +898,6 @@ let htmlContainer =`
     ${htmlCanvasImgSlider}
     ${htmlSwapLeft}
 </div>`;
-
 
 // Вывод css разметки /////////////////////////// 
 let cssSlider =`
@@ -911,11 +917,10 @@ let cssSlider =`
 }
 
 ${sccCanvasImgSlider}
+
 ${cssSwapRight}
-${cssSwapLeft}
 
-`;
-
+${cssSwapLeft}`;
 
 // Вывод js разметки //////////////
 let jsContainer = `
@@ -924,10 +929,12 @@ let bntL = document.getElementById('bntL');
 let bntR = document.getElementById('bntR');
 
 ${jsCanvasImgSlider}
-${jsSwapRight}
-${jsSwapLeft}
 
-`;
+${jsSwapRight}
+
+${jsSwapLeft}`;
+
+
     return {
         htmlContainer, cssSlider, jsContainer, position, handleChange, editItemX, styles, inputX, editItemY, inputY, 
         MeaningWnumber, onChangeW, editItemW, inputW, MeaningHnumber, onChangeH, editItemH, inputH, MeaningRnumber, 

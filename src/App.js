@@ -21,6 +21,8 @@ import Reg from './Reg';
 
 import MainLayout from './MainLayout';
 
+import Testik from './Testik'; 
+
 function App() {
     return (
         <>
@@ -37,6 +39,8 @@ function App() {
 
                 <Route path="/workspace" element={<RedactorMenu/>}/>
                 <Route path="/proto" element={<Title/>}/>
+
+                <Route path="/testik" element={<Testik/>}/>
             </Routes>
         </>
     );
