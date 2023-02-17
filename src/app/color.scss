@@ -342,7 +342,8 @@ input[type=number]::-webkit-inner-spin-button::after { border-bottom: 10px solid
         animation: __obj_1 3s linear 1 forwards;
         margin: 0 auto;
     }
-    @keyframes __obj_1 {
+    @keyframes __obj_1 
+    {
         0% {
             width: 10px;
         }50% {
@@ -354,7 +355,8 @@ input[type=number]::-webkit-inner-spin-button::after { border-bottom: 10px solid
             width: 200px;
         }
     }
-    @keyframes __obj_2 {
+    @keyframes __obj_2 
+    {
         0%{
             opacity: 1;
         }95% {
@@ -363,7 +365,8 @@ input[type=number]::-webkit-inner-spin-button::after { border-bottom: 10px solid
             opacity: 0;
         }
     }
-    @keyframes __obj_3 {
+    @keyframes __obj_3 
+    {
         0%{
             transform: rotate(0deg);
         } 100% {
