@@ -5,9 +5,9 @@
     top: 0;
     left: 50%;
     transform: translate(-50%);
-    z-index: 1;
+    z-index: 2;
     width: 410px;
-    height: 55px;
+    height: 53px;
     background: #2b2b2b;
     border-width: 0px 0.01vw 0.01vw 0.01vw;
     border-style: solid;
@@ -100,7 +100,6 @@
 }
 
 .pointer{ cursor: url(../../assets/imegs/pointer.png), auto; }
-.cursor_zoom{ cursor: url(../../assets/imegs/zoom.png), auto; }
 
 .move_btn-1:hover + .info_btn-move{display: block;left: -24px;}
 .move_btn-2:hover + .info_btn-move{display: block;left: 30px;}

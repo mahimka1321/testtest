@@ -161,6 +161,7 @@ function RedactorMenu() {
 
     let scaleControler = Math.round(pos.scale * 1000) / 10 + ` %` 
 
+
     return (
         <div className="container-main anim-c main__containre_redactor">    
             {/* <Hint /> */}

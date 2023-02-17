@@ -53,7 +53,7 @@ function PopupCode({
                 </div>
                 <div className="content_popup">
                     <div className="editor-area">
-                        {/* <Edit /> */}
+                        {/* <Edit /> */} 
                         <textarea
                             className="item item_active"
                             onChange={(e) => htmlContainer(e.target.value)}

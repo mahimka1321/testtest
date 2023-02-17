@@ -67,7 +67,7 @@ function TopMenu({setPop,pop,setScroller,scroller,setPos}) {
         let divCan = document.getElementById("divCan"); 
         let divCan2 = document.getElementById("divCan1"); 
         let divCan1 = document.getElementById("divCan2"); 
-    
+
         divCan.classList.toggle("cursor_zoom");
         divCan1.classList.toggle("cursor_zoom");
         divCan2.classList.toggle("cursor_zoom");
@@ -77,6 +77,9 @@ function TopMenu({setPop,pop,setScroller,scroller,setPos}) {
         btn5.classList.toggle("ropwei");
         setScroller(scroller + 1);
         removeMove();
+
+        let boxSliderOne = document.getElementById("boxSliderOne")
+        boxSliderOne.classList.add("zoom")
     };
     
     function btn6() {
@@ -100,10 +103,14 @@ function TopMenu({setPop,pop,setScroller,scroller,setPos}) {
         let divCan = document.getElementById("divCan"); 
         let divCan2 = document.getElementById("divCan1"); 
         let divCan1 = document.getElementById("divCan2"); 
+
+        let boxSliderOne = document.getElementById("boxSliderOne")
     
         divCan.classList.remove("cursor_zoom");
         divCan1.classList.remove("cursor_zoom");
         divCan2.classList.remove("cursor_zoom");
+
+        boxSliderOne.classList.remove("zoom")
     };
     
 
@@ -148,6 +155,7 @@ function TopMenu({setPop,pop,setScroller,scroller,setPos}) {
             let moveBtn2 = document.getElementById("moveBtn2")
             let btn3 = document.getElementById("btn3");
             let btn5 = document.getElementById("btn5");
+            let boxSliderOne = document.getElementById("boxSliderOne")
             moveBtn2.classList.remove("ropwei")
             btn3.classList.remove("ropwei")
             btn5.classList.add("ropwei")
@@ -156,6 +164,8 @@ function TopMenu({setPop,pop,setScroller,scroller,setPos}) {
             setPop(pop = 0)
             removeMove()
             event.preventDefault();
+
+            boxSliderOne.classList.add("zoom")
         }
     });
     

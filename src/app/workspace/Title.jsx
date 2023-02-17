@@ -23,6 +23,12 @@ function Title() {
 
     return (
         <div id="ContentNone">
+            <div className="__animation">
+                <div className="logo_anim">
+                                    
+                </div>
+                <div className="line__loading"></div>
+            </div>
             <iframe 
                 className="Preview" 
                 title="Preview" 

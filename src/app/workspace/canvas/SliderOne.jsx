@@ -18,7 +18,8 @@ function SliderOne({
     setPressed2,
     styles3,
     togglePressed,
-    pressed,      
+    pressed,  
+    pressed2,    
     pressed1, 
     sizeMap,
 
@@ -36,6 +37,7 @@ function SliderOne({
         styles3={styles3}
         togglePressed2={togglePressed2}
         setPressed2={setPressed2}
+        pressed2={pressed2}
         />
     )
 
@@ -112,10 +114,7 @@ function SliderOne({
 
     return (
         <div className='container-slider'>
-            <div
-                onWheelCapture={onScroll}
-                style={sizeMap}
-            >
+            <div style={sizeMap}>
                 {ControlSwapLeft} 
                 {ControlCanvasImgSlider}
                 {ControlSwapRight}

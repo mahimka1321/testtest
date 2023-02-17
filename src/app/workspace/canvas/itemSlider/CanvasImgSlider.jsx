@@ -4,6 +4,7 @@ import React from "react";
 function CanvasImgSlider({
     divCan2Tg,
     styles3,
+    pressed2,
     togglePressed2,
     setPressed2,
 }) {
@@ -13,7 +14,7 @@ function CanvasImgSlider({
                 <div
                     onClick={divCan2Tg}
                     style={styles3}
-                    className="rwerw box-0"
+                    className={ pressed2 ? "box_0-active rwerw": "rwerw box-0"}
                     onClickCapture={() => setPressed2(false)}
                     onMouseDown={togglePressed2}
                     id='divCan2'

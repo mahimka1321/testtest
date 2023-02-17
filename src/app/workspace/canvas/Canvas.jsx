@@ -13,6 +13,7 @@ function Canvas({
     togglePressed1, 
     togglePressed2,
     setPressed2,
+    pressed2,
     styles3,
     togglePressed,
     pressed,      
@@ -43,6 +44,7 @@ function Canvas({
             togglePressed={togglePressed}
             pressed={pressed}
             pressed1={pressed1}
+            pressed2={pressed2}
             sizeMap={sizeMap}
 
             sumControlCanvasImgSlider={sumControlCanvasImgSlider}
@@ -74,7 +76,11 @@ function Canvas({
     }
 
     return (
-        <div className='boxControl'  id='boxSliderOne'> 
+        <div 
+            className='boxControl'
+            onWheelCapture={onScroll}
+            id='boxSliderOne'
+        > 
             {/* блок по смене контента */}
             <div id="priem">
                 {toos}

@@ -248,3 +248,15 @@ input[type=number]::-webkit-inner-spin-button::after
     position: relative;
     z-index: 1000;
 }
+
+.zoom {
+    cursor: url(../../assets/imegs/zoom.png), auto ;
+}
+
+.zoom_plus {
+    cursor: url(../../assets/imegs/zoom_p.png), auto ;
+}
+
+.zoom_minus {
+    cursor: url(../../assets/imegs/zoom_m.png), auto ;
+}
