@@ -1,9 +1,9 @@
                   
 import React from "react";
 
-import CanvasImgSlider from "./itemSlider/CanvasImgSlider";
-import SwapRight from "./itemSlider/SwapRight";
-import SwapLeft from "./itemSlider/SwapLeft";
+import CanvasImgSlider from "./canvas-slider/CanvasImgSlider";
+import SwapRight from "./canvas-slider/SwapRight";
+import SwapLeft from "./canvas-slider/SwapLeft";
 
 
 function SliderOne({
@@ -80,9 +80,9 @@ function SliderOne({
     let meaningCl = document.getElementById("meaningCl");
     let meaningCl1 = document.getElementById("meaningCl1");
     let meaningCl2 = document.getElementById("meaningCl2");
-    let targetOne = document.getElementById("targetOne");
-    let targetTwo = document.getElementById("targetTwo");
-    let targetFree = document.getElementById("targetFree");
+    let targetOne = document.getElementById("btnTargetOne");
+    let targetTwo = document.getElementById("btnTargetTwo");
+    let targetFree = document.getElementById("btnTargetFree");
     let divCan = document.getElementById("divCan");
     let divCan1 = document.getElementById("divCan1");
     let divCan2 = document.getElementById("divCan2");

@@ -11,7 +11,7 @@ const [pressed, setPressed] = useState(false);
 const [position, setPosition] = useState(() => {
     const pos = JSON.parse(localStorage.getItem('pos'));
     if (pos && pos.hasOwnProperty('x') && pos.hasOwnProperty('y')) return pos;
-    return { x: -300, y: -40}
+    return { x: -400, y: 10}
 });
 
 const onMouseMove = useCallback(
@@ -52,7 +52,7 @@ useEffect(() => {
     // БЭКГРАУНД БЛОКА + localStorage //
     //////////////////////////////////////
     let saveBackgroundDiv1 = localStorage.getItem("BackgroundDiv1");
-    let [state, updateState] = useState(saveBackgroundDiv1 || "#4aff93"); 
+    let [state, updateState] = useState(saveBackgroundDiv1 || "#242424"); 
     const setLocalStorageBG1 = (value) => localStorage.setItem("BackgroundDiv1", value);
     
     const handleInput = (e) => {
@@ -87,7 +87,7 @@ useEffect(() => {
     // ПРИСВАИВАНИЯ ПО W + localStorage //
     //////////////////////////////////////
     let saveWidthDiv1 = localStorage.getItem("WidthDiv1");
-    let [MeaningWnumber, setMeaningW] = useState(saveWidthDiv1 || 50);
+    let [MeaningWnumber, setMeaningW] = useState(saveWidthDiv1 || 55);
     const setLocalStorageW1 = (value) => localStorage.setItem("WidthDiv1", value);
     
     const onChangeW = (e) => {
@@ -99,7 +99,7 @@ useEffect(() => {
     // ПРИСВАИВАНИЯ ПО H + localStorage //
     //////////////////////////////////////
     let saveHeightDiv1 = localStorage.getItem("HeightDiv1");
-    const [MeaningHnumber, setMeaningH] = useState(saveHeightDiv1 || 80);
+    const [MeaningHnumber, setMeaningH] = useState(saveHeightDiv1 || 40);
     const setLocalStorageH1 = (value) => localStorage.setItem("HeightDiv1", value);
     
     const onChangeH = (e) => {
@@ -168,7 +168,7 @@ useEffect(() => {
     const [position1, setPosition1] = useState(() => {
         const pos1 = JSON.parse(localStorage.getItem('pos1'));
         if (pos1 && pos1.hasOwnProperty('x') && pos1.hasOwnProperty('y')) return pos1;
-        return { x: 250, y: -40}
+        return { x: -330, y: 10}
     });
 
     const onMouseMove1 =  useCallback(
@@ -207,7 +207,7 @@ useEffect(() => {
     // БЭКГРАУНД БЛОКА + localStorage //
     //////////////////////////////////////
     let saveBackgroundDiv2 = localStorage.getItem("BackgroundDiv2");
-    let [state1, updateState1] = useState(saveBackgroundDiv2 || "#80bdff"); 
+    let [state1, updateState1] = useState(saveBackgroundDiv2 || "#242424"); 
     const setLocalStorageBG2 = (value) => localStorage.setItem("BackgroundDiv2", value);
     
     const handleInput1 = (e) => {
@@ -240,7 +240,7 @@ useEffect(() => {
     // ПРИСВАИВАНИЯ ПО W + localStorage //
     //////////////////////////////////////
     let saveWidthDiv2 = localStorage.getItem("WidthDiv2");
-    const [MeaningWnumber1, setMeaningW1] = useState(saveWidthDiv2 || 50);
+    const [MeaningWnumber1, setMeaningW1] = useState(saveWidthDiv2 || 55);
     const setLocalStorageW2 = (value) => localStorage.setItem("WidthDiv2", value);
     
     const onChangeW1 = (e) => {
@@ -252,7 +252,7 @@ useEffect(() => {
     // ПРИСВАИВАНИЯ ПО H + localStorage //
     //////////////////////////////////////
     let saveHeightDiv2 = localStorage.getItem("HeightDiv2");
-    const [MeaningHnumber1, setMeaningH1] = useState(saveHeightDiv2 || 80);
+    const [MeaningHnumber1, setMeaningH1] = useState(saveHeightDiv2 || 40);
     const setLocalStorageH2 = (value) => localStorage.setItem("HeightDiv2", value);
     const onChangeH1 = (e) => {
         setMeaningH1(e.target.value);
@@ -322,7 +322,7 @@ useEffect(() => {
     const [position2, setPosition2] = useState(() => {
         const pos2 = JSON.parse(localStorage.getItem('pos2'));
         if (pos2 && pos2.hasOwnProperty('x') && pos2.hasOwnProperty('y')) return pos2;
-        return { x: -225, y: -140}
+        return { x: -400, y: -280}
     });
 
     const onMouseMove2 = useCallback(
@@ -379,7 +379,7 @@ useEffect(() => {
     // ПРИСВАИВАНИЯ ПО W + localStorage //
     //////////////////////////////////////
     let saveWidthDiv3 = localStorage.getItem("WidthDiv3");
-    const [MeaningWnumber2, setMeaningW2] = useState(saveWidthDiv3 || 450);
+    const [MeaningWnumber2, setMeaningW2] = useState(saveWidthDiv3 || 800);
     const setLocalStorageW3 = (value) =>  localStorage.setItem("WidthDiv3", value);
     
     const onChangeW2 = (e) => {
@@ -508,7 +508,7 @@ useEffect(() => {
     };
 
     let saveSizeSvg1 = localStorage.getItem("SizeSvg1");
-    const [SvgControl, setSvgControl] = useState(saveSizeSvg1 || 20);
+    const [SvgControl, setSvgControl] = useState(saveSizeSvg1 || 15);
     const setLocalStorageSSvg1 = (value) => localStorage.setItem("SizeSvg1", value);
         
     const onChangeSvg = (e) => {

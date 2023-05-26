@@ -1,6 +1,8 @@
 
 import React, {useEffect, useRef} from "react";
 import Hoocks from "./hoocks/SliderHock"
+import WrapperHoocks from "./hoocks/WrapperHoocks"
+import Control from "./hoocks/Control"
 
 function Title() {
 
@@ -10,17 +12,45 @@ function Title() {
         htmlContainer, cssSlider, jsContainer
     }  = Hoocks();
 
+    const {
+        htmlWrapper,cssWrapper,test
+    }  = WrapperHoocks();
+
+    const {
+        setSika,sika
+    } = Control();
+
     const iframe = useRef(null);
+
+
+    let priemTitleHTML
+    let priemTitleCSS
+    let priemTitleJS
+
+    if(sika === 'slider'){
+        priemTitleHTML = htmlContainer
+        priemTitleCSS = cssSlider
+        priemTitleJS = jsContainer
+    }
+
+    if(sika === 'wrapper'){
+        priemTitleHTML = htmlWrapper
+        priemTitleCSS = cssWrapper
+        priemTitleJS = priemTitleJS
+    }
+
+
 
     useEffect(() => {
         iframe.current.srcdoc = 
         `
-            ${htmlContainer}
-            <style>${cssSlider}</style>
-            <script>${jsContainer}</script>
+            ${priemTitleHTML}
+            <style>${priemTitleCSS}</style>
+            <script>${priemTitleJS}</script>
         `;
-    },[htmlContainer, cssSlider, jsContainer]);
+    },[priemTitleHTML, priemTitleCSS, priemTitleJS]);
 
+    
     return (
         <div id="ContentNone">
             <div className="__animation">
@@ -37,6 +67,8 @@ function Title() {
             ></iframe>
         </div>
     )
+
+    
 }
 
 export default Title;

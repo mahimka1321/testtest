@@ -1,9 +1,9 @@
 
 import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
-import regPhoto from './app/assets/imegs/reg.png';
+import regPhoto from './app/assets/img/reg.png';
 
-import './app/color.scss';
+import './app/workspace/color.scss';
 
 
 function Reg() {

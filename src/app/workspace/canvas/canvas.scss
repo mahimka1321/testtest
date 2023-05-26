@@ -71,7 +71,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: url(../../assets/imegs/grab.png), auto;
+            cursor: url(../../assets/img/grab.png), auto;
             &:hover::before
             {
                  content: '';
@@ -90,11 +90,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: url(../../assets/imegs/grabbing.png), auto;
+            cursor: url(../../assets/img/grabbing.png), auto;
         }
         .rwerw
         {
-            background-image: url(../../assets/imegs/p102.png);
+            background-image: url(../../assets/img/p102.png);
             background-position: center center;
             background-repeat: no-repeat;
         }
@@ -116,7 +116,7 @@
 
 .cursor_grab
 {
-    cursor: url(../../assets/imegs/grab.png), auto;
+    cursor: url(../../assets/img/grab.png), auto;
 }
 
 input[type=number]::-webkit-inner-spin-button 
@@ -126,7 +126,7 @@ input[type=number]::-webkit-inner-spin-button
     text-align: center;
     -webkit-appearance: none;
     background: transparent;
-    cursor: url(../../assets/imegs/row-resize.png), auto;
+    cursor: url(../../assets/img/row-resize.png), auto;
 }
 input[type=number]::-webkit-inner-spin-button::before,
 input[type=number]::-webkit-inner-spin-button::after 
@@ -248,15 +248,32 @@ input[type=number]::-webkit-inner-spin-button::after
     position: relative;
     z-index: 1000;
 }
-
+.newclass { background-color: yellow }
 .zoom {
-    cursor: url(../../assets/imegs/zoom.png), auto ;
+    cursor: url(../../assets/img/zoom.png), auto ;
 }
 
-.zoom_plus {
-    cursor: url(../../assets/imegs/zoom_p.png), auto ;
+// .zoom_plus {
+//     cursor: url(../../assets/imegs/zoom_p.png), auto ;
+// }
+// 
+// .zoom_minus {
+//     cursor: url(../../assets/imegs/zoom_m.png), auto ;
+// }
+
+.er{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-image: #000;
+
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.zoom_minus {
-    cursor: url(../../assets/imegs/zoom_m.png), auto ;
+.item_wrapper
+{
+    background: url(../../assets/img/p102.png) center center no-repeat #2b2b2b;
+    background-size: 350px;
 }

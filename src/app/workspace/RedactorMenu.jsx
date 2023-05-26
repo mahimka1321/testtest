@@ -1,20 +1,25 @@
 import React from "react";
 
-import LeftColumn from "./leftColumn/LeftColumn";
-import RightColumn from "./rightColumn/RightColumn";
-import TopMenu from "./menuHeader/MenuHeader";
-import PopupCode from "./PopupCode"
+import LeftColumn from "./left-column/LeftColumn";
+import RightColumn from "./right-column/menu-slider/RightColumn";
+import TopMenu from "./top-menu/MenuHeader";
+import PopupCode from "./popup-menu/PopupCode"
 import Canvas from "./canvas/Canvas"
+import Wrapper from "./canvas/canvas-wrapper/Wrapper"
 import Hoocks from "./hoocks/SliderHock"
+import ControlMenuWrapper from "./left-column/menu-control-wrapper/ControlWrapperMenu_1"
 
-import "./rightColumn/rightColumn.scss"
-import "./menuHeader/topMenu.scss"
+import "./right-column/menu-slider/rightColumn.scss"
+import "./top-menu/topMenu.scss"
 import "./canvas/canvas.scss"
-import "./popupCode.scss"
-import "../color.scss"
-import "../animatic/animation.scss"
+import "./popup-menu/popupCode.scss"
+import "./color.scss"
+import "../animations/animation.scss"
 
 import "../../index.css"
+import WrapperHoocks from "./hoocks/WrapperHoocks";
+import Control from "./hoocks/Control";
+import RightColumnWrapper from "./right-column/menu-wrapper/RightColumnWrapper";
 
 function RedactorMenu() {
     const {
@@ -159,24 +164,63 @@ function RedactorMenu() {
         addPH ,removePH, addSL, removeSL, addSR ,removeSR,
     }  = Hoocks();
 
+    const {addVertically, removeVertically, addHorizontals, removeHorizontals, gridY, setGridY, style__item_wrapper,
+        WrapperW, onChangeWrapperW, inputWrapperW, editItemWrapperW,
+        WrapperH, onChangeWrapperH, inputWrapperH, editItemWrapperH,
+        WrapperMargin, onChangeWrapperMargin, inputWrapperMargin, editItemWrapperMargin,
+        MeaningPXnumberWrapper, inputPXwrapper,onChangePXwrapper,onChangeSwrepper,editItemPXwrapper,MeaningSnumberWrapper
+    , htmlWrapper,cssWrapper,test,MeaningBRnumberWrapper, setMeaningBRwrapper, setLocalStorageBRwrapper, onChangeBRWrapper, inputBRwrapper, editItemBRwrapper
+} = WrapperHoocks();
+
     let scaleControler = Math.round(pos.scale * 1000) / 10 + ` %` 
 
+const {
+    setSika,sika
+} = Control();
 
-    return (
-        <div className="container-main anim-c main__containre_redactor">    
-            {/* <Hint /> */}
-            <PopupCode 
-                htmlContainer={htmlContainer} 
-                cssSlider={cssSlider} 
-                jsContainer={jsContainer} 
-                position={position} 
-                handleChange={handleChange} 
-                editItemX={editItemX} 
-                inputX={inputX} 
-                styles={styles} 
-            />
-            <LeftColumn
+    let canvasSliderContasinerVisible
+    let leftMenuSliderContasinerVisible
+    let rightMenuSliderContasinerVisible
 
+    let canvasWrapperContasinerVisible
+    let leftMenuWrapperContasinerVisible
+    let rightMenuWrapperContasinerVisible
+
+    let canvasSliderControlActive = (
+        <Canvas
+        setPressed={setPressed} 
+        styles={styles} 
+        onMouseMove={onMouseMove} 
+        togglePressed={togglePressed}
+        sizeMap={sizeMap}
+        svg={svg}
+        setPressed1={setPressed1} 
+        styles2={styles2} 
+        onScroll={onScroll} pos={pos} 
+        btnNeE1={btnNeE1} 
+        togglePressed1={togglePressed1}
+        setPressed2={setPressed2} 
+        onMouseMove2={onMouseMove2} 
+        styles3={styles3}  
+        togglePressed2={togglePressed2}
+        pressed={pressed} 
+        pressed1={pressed1} 
+        pressed2={pressed2}
+
+        numControlToch={numControlToch}
+        setNumControlToch={setNumControlToch}
+
+        sumControlCanvasImgSlider={sumControlCanvasImgSlider}
+        sumControlSwapLeft={sumControlSwapLeft}
+        sumControlSwapRight={sumControlSwapRight}
+        setSumControlCanvasImgSlider={setSumControlCanvasImgSlider}
+        setSumControlSwapLeft={setSumControlSwapLeft}
+        setSumControlSwapRight={setSumControlSwapRight}
+        />
+    );
+    let leftMenuSliderControlActive = (
+        <LeftColumn
+        setSika={setSika} sika={sika}
 numControlToch={numControlToch}
 setNumControlToch={setNumControlToch}
 
@@ -292,8 +336,104 @@ addSR={addSR} removeSR={removeSR}
                 editItemPX2={editItemPX2}
                 inputPX2={inputPX2} 
                 MeaningSnumber2={MeaningSnumber2} 
-                onChangeS2={onChangeS2}
+        onChangeS2={onChangeS2}
+        />
+    );
+    let rightMenuSliderControlActive = (
+        <RightColumn
+        plusClick1={plusClick1} 
+        plusClick2={plusClick2} 
+        plusClick3={plusClick3}
+        handleInput4={handleInput4} 
+        state4={state4} 
+        btnNeE={btnNeE}
+        />
+        );
+
+    let canvasWrapperControlActive = (
+        <Wrapper  
+        addVertically={addVertically} 
+        removeVertically={removeVertically} 
+        addHorizontals={addHorizontals} 
+        removeHorizontals={removeHorizontals}
+        gridY={gridY} 
+        setGridY={setGridY} 
+        style__item_wrapper={style__item_wrapper} 
+        test={test}
+        />
+    );
+    let leftMenuWrapperControlActive = (
+        <ControlMenuWrapper 
+        WrapperW={WrapperW}setSika={setSika} sika={sika} onChangeWrapperW={onChangeWrapperW} inputWrapperW={inputWrapperW} editItemWrapperW={editItemWrapperW}
+        WrapperH={WrapperH} onChangeWrapperH={onChangeWrapperH} inputWrapperH={inputWrapperH} editItemWrapperH={editItemWrapperH}
+        WrapperMargin={WrapperMargin} onChangeWrapperMargin={onChangeWrapperMargin} inputWrapperMargin={inputWrapperMargin} 
+        editItemWrapperMargin={editItemWrapperMargin}
+        MeaningBRnumberWrapper={MeaningBRnumberWrapper}
+        setMeaningBRwrapper={setMeaningBRwrapper}
+        setLocalStorageBRwrapper={setLocalStorageBRwrapper}
+        onChangeBRWrapper={onChangeBRWrapper}
+        inputBRwrapper={inputBRwrapper}
+        editItemBRwrapper={editItemBRwrapper}
+        MeaningPXnumberWrapper={MeaningPXnumberWrapper}
+        inputPXwrapper={inputPXwrapper}
+        onChangePXwrapper={onChangePXwrapper}
+        onChangeSwrepper={onChangeSwrepper}
+        editItemPXwrapper={editItemPXwrapper}
+        MeaningSnumberWrapper={MeaningSnumberWrapper}
+        /> 
+    );
+    let rightMenuWrapperControlActive = (
+        <RightColumnWrapper 
+        addVertically={addVertically} 
+        removeVertically={removeVertically} 
+        addHorizontals={addHorizontals} 
+        removeHorizontals={removeHorizontals}
+        />
+    );
+
+    if(sika === 'slider') {
+        canvasSliderContasinerVisible = canvasSliderControlActive
+        leftMenuSliderContasinerVisible = leftMenuSliderControlActive
+        rightMenuSliderContasinerVisible = rightMenuSliderControlActive
+    }
+
+    if(sika === 'wrapper') {
+        canvasWrapperContasinerVisible = canvasWrapperControlActive
+        leftMenuWrapperContasinerVisible = leftMenuWrapperControlActive
+        rightMenuWrapperContasinerVisible = rightMenuWrapperControlActive
+    }
+
+
+        React.useEffect(()=>{
+            for (let i = 1; i < test; i++) {
+                if(sika === 'wrapper') {
+                    var clone = document.getElementById('thediv').cloneNode(true);
+                    document.getElementById("containerWrapper").appendChild(clone);
+                } else {}
+              }
+        },[])
+
+
+
+    return (
+        <div className="container-main anim-c main__containre_redactor">    
+            {/* <Hint /> */}
+            <PopupCode 
+                htmlContainer={htmlContainer} 
+                cssSlider={cssSlider} 
+                jsContainer={jsContainer} 
+                position={position} 
+                handleChange={handleChange} 
+                editItemX={editItemX} 
+                inputX={inputX} 
+                styles={styles} 
+                htmlWrapper={htmlWrapper}
+                cssWrapper={cssWrapper}
+                setSika={setSika}
+                sika={sika}
             />
+            {leftMenuWrapperContasinerVisible}
+            {leftMenuSliderContasinerVisible}
             <TopMenu
                 setPressed={setPressed} 
                 pressed={pressed} 
@@ -312,44 +452,10 @@ addSR={addSR} removeSR={removeSR}
                 max="900"  
                 value={scaleControler}
             />
-            <Canvas
-                setPressed={setPressed} 
-                styles={styles} 
-                onMouseMove={onMouseMove} 
-                togglePressed={togglePressed}
-                sizeMap={sizeMap}
-                svg={svg}
-                setPressed1={setPressed1} 
-                styles2={styles2} 
-                onScroll={onScroll} pos={pos} 
-                btnNeE1={btnNeE1} 
-                togglePressed1={togglePressed1}
-                setPressed2={setPressed2} 
-                onMouseMove2={onMouseMove2} 
-                styles3={styles3}  
-                togglePressed2={togglePressed2}
-                pressed={pressed} 
-                pressed1={pressed1} 
-                pressed2={pressed2}
-
-                numControlToch={numControlToch}
-                setNumControlToch={setNumControlToch}
-
-                sumControlCanvasImgSlider={sumControlCanvasImgSlider}
-                sumControlSwapLeft={sumControlSwapLeft}
-                sumControlSwapRight={sumControlSwapRight}
-                setSumControlCanvasImgSlider={setSumControlCanvasImgSlider}
-                setSumControlSwapLeft={setSumControlSwapLeft}
-                setSumControlSwapRight={setSumControlSwapRight}
-            />
-            <RightColumn
-                plusClick1={plusClick1} 
-                plusClick2={plusClick2} 
-                plusClick3={plusClick3}
-                handleInput4={handleInput4} 
-                state4={state4} 
-                btnNeE={btnNeE}
-            />
+            {canvasSliderContasinerVisible}
+            {canvasWrapperContasinerVisible}
+            {rightMenuSliderContasinerVisible}
+            {rightMenuWrapperContasinerVisible}
         </div>
     );
 };

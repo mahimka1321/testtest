@@ -1,7 +1,7 @@
 
 import React from "react";
 import SliderOne from "./SliderOne" 
-import Toch from "./itemSlider/Toch"
+import Toch from "./canvas-slider/Toch"
 
 function Canvas({
     setPressed,
