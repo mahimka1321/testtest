@@ -3,6 +3,7 @@ import React, {useEffect, useRef} from "react";
 import Hoocks from "./hoocks/SliderHock"
 import WrapperHoocks from "./hoocks/WrapperHoocks"
 import Control from "./hoocks/Control"
+import HeaderHoock from "./hoocks/HeaderHoock"
 
 function Title() {
 
@@ -15,6 +16,10 @@ function Title() {
     const {
         htmlWrapper,cssWrapper,test
     }  = WrapperHoocks();
+
+    const {
+        htmlHeader, cssHeader
+    }  = HeaderHoock();
 
     const {
         setSika,sika
@@ -36,6 +41,12 @@ function Title() {
     if(sika === 'wrapper'){
         priemTitleHTML = htmlWrapper
         priemTitleCSS = cssWrapper
+        priemTitleJS = priemTitleJS
+    }
+
+    if(sika === 'header'){
+        priemTitleHTML = htmlHeader
+        priemTitleCSS = cssHeader
         priemTitleJS = priemTitleJS
     }
 

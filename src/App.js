@@ -10,7 +10,8 @@ import Home from './app/home/page-home/Home';
 import AboutTheProject from './app/home/page-one/AboutTheProject'; 
 import SliderP from './app/home/page-one/SliderP'; 
 import HeaderP from './app/home/page-one/HeaderP'; 
-import GlP from './app/home/page-one/GlP'; 
+import GlP from './app/home/page-one/GlP';  
+import CanvasHeader from './app/workspace/canvas/CanvasHeader';
 
 import HowItWorks from './app/home/page-twoo/HowItWorks'; 
 
@@ -44,6 +45,8 @@ function App() {
 
                 <Route path="/testik" element={<Testik/>}/>
                 <Route path="/wrapper" element={<Wrapper/>}/>
+
+                <Route path="/canvasHeader" element={<CanvasHeader/>}/>
             </Routes>
         </>
     );

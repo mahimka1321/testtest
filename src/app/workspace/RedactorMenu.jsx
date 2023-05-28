@@ -8,6 +8,10 @@ import Canvas from "./canvas/Canvas"
 import Wrapper from "./canvas/canvas-wrapper/Wrapper"
 import Hoocks from "./hoocks/SliderHock"
 import ControlMenuWrapper from "./left-column/menu-control-wrapper/ControlWrapperMenu_1"
+import MenuControlHeader from "./left-column/menu-control-header/MenuControlHeader"
+import HeaderHoock from "./hoocks/HeaderHoock"
+
+import CanvasHeader from "./canvas/CanvasHeader"
 
 import "./right-column/menu-slider/rightColumn.scss"
 import "./top-menu/topMenu.scss"
@@ -178,6 +182,16 @@ const {
     setSika,sika
 } = Control();
 
+const {
+    htmlHeader, cssHeader,addVerticallyLiHeader,numNavControl,removeVerticallyLiHeader,
+    headerH,onChangeHeaderH,editItemHeaderH,inputHeaderH,
+    headerLogoSize,onChangeHeaderLogoSize,editItemHeaderLogoSize,inputHeaderLogoSize,
+    headerNavSize,onChangeHeaderNavSize,editItemHeaderNavSize,inputHeaderNavSize,
+    headerNavMarginLeft,onChangeHeaderNavMarginLefte,editItemHeaderNavMarginLeft,inputHeaderNavMarginLeft,
+    headerNavContainerRight,onChangeHeaderNavContainerRight,editItemHeaderNavContainerRight,inputHeaderNavContainerRight,
+    header,headerContainer,logoA,li,liA
+} = HeaderHoock();
+
     let canvasSliderContasinerVisible
     let leftMenuSliderContasinerVisible
     let rightMenuSliderContasinerVisible
@@ -185,6 +199,10 @@ const {
     let canvasWrapperContasinerVisible
     let leftMenuWrapperContasinerVisible
     let rightMenuWrapperContasinerVisible
+
+    let canvasHeaderContasinerVisible
+    let leftMenuHeaderContasinerVisible
+    let rightMenuHeaderContasinerVisible
 
     let canvasSliderControlActive = (
         <Canvas
@@ -359,7 +377,7 @@ addSR={addSR} removeSR={removeSR}
         gridY={gridY} 
         setGridY={setGridY} 
         style__item_wrapper={style__item_wrapper} 
-        test={test}
+        test={test} sizeMap={sizeMap} onScroll={onScroll}
         />
     );
     let leftMenuWrapperControlActive = (
@@ -391,6 +409,45 @@ addSR={addSR} removeSR={removeSR}
         />
     );
 
+    let canvasHeaderControlActive = (
+        <CanvasHeader sizeMap={sizeMap} onScroll={onScroll}
+        header={header}
+        headerContainer={headerContainer}
+        logoA={logoA}
+        li={li}
+        liA={liA}
+        />
+    );
+
+    let leftMenuHeaderControlActive = (
+        <MenuControlHeader
+        sika={sika}
+        setSika={setSika}
+        headerH={headerH}
+        onChangeHeaderH={onChangeHeaderH}
+        editItemHeaderH={editItemHeaderH}
+        inputHeaderH={inputHeaderH}
+        headerLogoSize={headerLogoSize}
+        onChangeHeaderLogoSize={onChangeHeaderLogoSize}
+        editItemHeaderLogoSize={editItemHeaderLogoSize}
+        inputHeaderLogoSize={inputHeaderLogoSize}
+        headerNavSize={headerNavSize}
+        onChangeHeaderNavSize={onChangeHeaderNavSize}
+        editItemHeaderNavSize={editItemHeaderNavSize}
+        inputHeaderNavSize={inputHeaderNavSize}
+        headerNavMarginLeft={headerNavMarginLeft}
+        onChangeHeaderNavMarginLefte={onChangeHeaderNavMarginLefte}
+        editItemHeaderNavMarginLeft={editItemHeaderNavMarginLeft}
+        inputHeaderNavMarginLeft={inputHeaderNavMarginLeft}
+        headerNavContainerRight={headerNavContainerRight}
+        onChangeHeaderNavContainerRight={onChangeHeaderNavContainerRight}
+        editItemHeaderNavContainerRight={editItemHeaderNavContainerRight}
+        inputHeaderNavContainerRight={inputHeaderNavContainerRight}
+        />
+    );
+
+    let rightMenuHeaderControlActive
+
     if(sika === 'slider') {
         canvasSliderContasinerVisible = canvasSliderControlActive
         leftMenuSliderContasinerVisible = leftMenuSliderControlActive
@@ -403,6 +460,12 @@ addSR={addSR} removeSR={removeSR}
         rightMenuWrapperContasinerVisible = rightMenuWrapperControlActive
     }
 
+    if(sika === 'header') {
+        canvasHeaderContasinerVisible = canvasHeaderControlActive
+        leftMenuHeaderContasinerVisible = leftMenuHeaderControlActive
+        rightMenuHeaderContasinerVisible = rightMenuHeaderControlActive
+    }
+
 
         React.useEffect(()=>{
             for (let i = 1; i < test; i++) {
@@ -410,9 +473,15 @@ addSR={addSR} removeSR={removeSR}
                     var clone = document.getElementById('thediv').cloneNode(true);
                     document.getElementById("containerWrapper").appendChild(clone);
                 } else {}
-              }
-        },[])
+            }
 
+            for (let i = 1; i < numNavControl; i++) {
+                if(sika === 'header') {
+                    var clone = document.getElementById('theLiHeader').cloneNode(true);
+                    document.getElementById("containerUlHeader").appendChild(clone);
+                } else {}
+            }
+        },[])
 
 
     return (
@@ -431,9 +500,16 @@ addSR={addSR} removeSR={removeSR}
                 cssWrapper={cssWrapper}
                 setSika={setSika}
                 sika={sika}
+                htmlHeader={htmlHeader}
+                cssHeader={cssHeader}
             />
-            {leftMenuWrapperContasinerVisible}
+
+
             {leftMenuSliderContasinerVisible}
+            {leftMenuWrapperContasinerVisible}
+            {leftMenuHeaderContasinerVisible}
+
+
             <TopMenu
                 setPressed={setPressed} 
                 pressed={pressed} 
@@ -452,10 +528,20 @@ addSR={addSR} removeSR={removeSR}
                 max="900"  
                 value={scaleControler}
             />
-            {canvasSliderContasinerVisible}
-            {canvasWrapperContasinerVisible}
+
+{/*
+            <button className="gfgd" onClick={addVerticallyLiHeader}>добавить</button>
+            <button className="gfgd" onClick={removeVerticallyLiHeader}>удалить</button>
+*/}
+
+            {canvasSliderContasinerVisible}  
+            {canvasWrapperContasinerVisible} 
+            {canvasHeaderContasinerVisible} 
+ 
             {rightMenuSliderContasinerVisible}
             {rightMenuWrapperContasinerVisible}
+            {rightMenuHeaderContasinerVisible}
+           
         </div>
     );
 };

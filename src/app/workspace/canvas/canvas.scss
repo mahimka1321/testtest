@@ -277,3 +277,60 @@ input[type=number]::-webkit-inner-spin-button::after
     background: url(../../assets/img/p102.png) center center no-repeat #2b2b2b;
     background-size: 350px;
 }
+
+
+
+
+.header__canvas_control
+{
+    display: flex;
+    width: 90%;
+    min-height: 50px;
+    background: #4AFF93;
+    margin: 0 auto;
+    margin-top: 50vh;
+    .header__canvas_container
+    {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 100px;
+        margin-right: 100px;
+        .header__canvas_logo
+        {
+            display: flex;
+            align-items: center;
+            height: auto;
+            a 
+            {
+                text-decoration: none;
+                color: #2b2b2b;
+            }
+        }
+        .header__canvas_nav
+        {
+            display: flex;
+            align-items: center;
+            height: auto;
+            list-style: none;
+            margin-top: 8px;
+            li 
+            {
+                margin-left: 8px;
+                margin-right: 8px;
+                font-size: 20px;
+                a 
+                {
+                    text-decoration: none;
+                    color: #2b2b2b;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+.wrapper__size_fix
+{
+    margin-top: 50vh;
+}
