@@ -24,6 +24,7 @@ import "../../index.css"
 import WrapperHoocks from "./hoocks/WrapperHoocks";
 import Control from "./hoocks/Control";
 import RightColumnWrapper from "./right-column/menu-wrapper/RightColumnWrapper";
+import RightColumnHeader from "./right-column/menu-header/RightColumnHeader";
 
 function RedactorMenu() {
     const {
@@ -446,7 +447,12 @@ addSR={addSR} removeSR={removeSR}
         />
     );
 
-    let rightMenuHeaderControlActive
+    let rightMenuHeaderControlActive = (
+        <RightColumnHeader
+        addVerticallyLiHeader={addVerticallyLiHeader}
+        removeVerticallyLiHeader={removeVerticallyLiHeader}
+        />
+    );
 
     if(sika === 'slider') {
         canvasSliderContasinerVisible = canvasSliderControlActive
@@ -528,11 +534,6 @@ addSR={addSR} removeSR={removeSR}
                 max="900"  
                 value={scaleControler}
             />
-
-{/*
-            <button className="gfgd" onClick={addVerticallyLiHeader}>добавить</button>
-            <button className="gfgd" onClick={removeVerticallyLiHeader}>удалить</button>
-*/}
 
             {canvasSliderContasinerVisible}  
             {canvasWrapperContasinerVisible} 
